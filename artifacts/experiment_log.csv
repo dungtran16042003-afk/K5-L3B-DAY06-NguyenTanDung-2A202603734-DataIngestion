@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed windows,500,50,document_id+source+page+book,none,gemini-embedding-001 (768d, cosine),"Fixed 500-char windows may split sentences and lose evidence across chunks",8/15,14/15,3/5,5/5,199 chunks; coherence 1.4/2; q07 evidence split across windows -> only complete Hit@3 miss
+B,paragraph grouping,900,0,document_id+source+page+book,none,gemini-embedding-001 (768d, cosine),"Whole-paragraph chunks keep ideas intact and improve Hit@1",13/15,14/15,3/5,5/5,118 chunks; coherence 2.0/2; q12 evidence on unretrieved half of unit p9
+C,paragraph grouping,900,0,document_id+source+page+book,book (when question provides it),gemini-embedding-001 (768d, cosine),"Same chunks as B; metadata book-filter narrows scope without losing hits",13/15,14/15,3/5,5/5,identical to B on 16 non-filter questions; filter compliance 4/4 on q11/q12/q13/q19

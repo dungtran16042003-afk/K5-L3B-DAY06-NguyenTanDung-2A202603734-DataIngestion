@@ -1,0 +1,34 @@
+[
+  {
+    "question_id": "q11",
+    "strategy": "C",
+    "filter": {
+      "book": "dracula"
+    },
+    "top3_compliant": true
+  },
+  {
+    "question_id": "q12",
+    "strategy": "C",
+    "filter": {
+      "book": "sherlock"
+    },
+    "top3_compliant": true
+  },
+  {
+    "question_id": "q13",
+    "strategy": "C",
+    "filter": {
+      "book": "alice"
+    },
+    "top3_compliant": true
+  },
+  {
+    "question_id": "q19",
+    "strategy": "C",
+    "filter": {
+      "book": "dracula"
+    },
+    "top3_compliant": true
+  }
+]

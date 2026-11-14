@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "corpus": "3 public-domain books (Project Gutenberg): alice, sherlock, dracula",
+    "split_rule": "15 dev / 5 test, fixed before any retrieval run",
+    "filter_note": "filter values are assumed user-provided context (the question names the book); strategies A/B run these questions without filter, C applies it",
+    "type_legend": "direct = fact lookup; paraphrase = reworded; conditional = asks for condition/exception/reasoning; filter = metadata filter provided",
+    "verified_by": "starter/.venv python -m src.run verify (evidence must sit inside gold unit)"
+  },
+  "questions": [
+    {
+      "id": "q01", "split": "dev", "type": "direct",
+      "question": "What is written on the paper label of the bottle Alice finds on the glass table?",
+      "expected_answer": "\"DRINK ME\", beautifully printed in large letters",
+      "gold_source_id": "alice", "gold_page": 4,
+      "evidence_quote": "round the neck of the bottle was a paper label, with the words “DRINK ME,” beautifully printed on it in large letters"
+    },
+    {
+      "id": "q02", "split": "dev", "type": "paraphrase",
+      "question": "While falling down the well, Alice took a jar off a shelf — what did its label say and why was she disappointed?",
+      "expected_answer": "It was labelled \"ORANGE MARMALADE\" but the jar was empty",
+      "gold_source_id": "alice", "gold_page": 1,
+      "evidence_quote": "it was labelled “ORANGE MARMALADE”, but to her great disappointment it was empty"
+    },
+    {
+      "id": "q03", "split": "dev", "type": "paraphrase",
+      "question": "How does Holmes demonstrate to Watson that he sees but does not observe?",
+      "expected_answer": "Watson has climbed the steps hundreds of times yet cannot say how many there are; Holmes knows there are seventeen because he has both seen and observed",
+      "gold_source_id": "sherlock", "gold_page": 3,
+      "evidence_quote": "Now, I know that there are seventeen steps, because I have both seen and observed"
+    },
+    {
+      "id": "q04", "split": "dev", "type": "direct",
+      "question": "What full name and title does Holmes reveal for the masked visitor before the man admits it?",
+      "expected_answer": "Wilhelm Gottsreich Sigismond von Ormstein, Grand Duke of Cassel-Felstein, hereditary King of Bohemia",
+      "gold_source_id": "sherlock", "gold_page": 7,
+      "evidence_quote": "Your Majesty had not spoken before I was aware that I was addressing Wilhelm Gottsreich Sigismond von Ormstein, Grand Duke of Cassel-Felstein, and hereditary King of Bohemia"
+    },
+    {
+      "id": "q05", "split": "dev", "type": "conditional",
+      "question": "What had already been tried to recover the King's photograph before he came to Holmes?",
+      "expected_answer": "Five attempts: burglars ransacked her house twice, her luggage was diverted once, and she was waylaid twice — no result",
+      "gold_source_id": "sherlock", "gold_page": 8,
+      "evidence_quote": "Five attempts have been made. Twice burglars in my pay ransacked her house. Once we diverted her luggage when she travelled. Twice she has been waylaid. There has been no result"
+    },
+    {
+      "id": "q06", "split": "dev", "type": "direct",
+      "question": "Which four nationalities does Harker's research say populate Transylvania, and where do they live?",
+      "expected_answer": "Saxons in the South (with the Wallachs), Magyars in the West, Szekelys in the East and North",
+      "gold_source_id": "dracula", "gold_page": 2,
+      "evidence_quote": "In the population of Transylvania there are four distinct nationalities: Saxons in the South, and mixed with them the Wallachs, who are the descendants of the Dacians; Magyars in the West, and Szekelys in the East and North"
+    },
+    {
+      "id": "q07", "split": "dev", "type": "direct",
+      "question": "What did Harker eat at the Hotel Royale in Klausenburgh, and what was the dish called?",
+      "expected_answer": "A chicken done up with red pepper, called \"paprika hendl\"",
+      "gold_source_id": "dracula", "gold_page": 1,
+      "evidence_quote": "I had for dinner, or rather supper, a chicken done up some way with red pepper, which was very good but thirsty. (Mem., get recipe for Mina.) I asked the waiter, and he said it was called “paprika hendl,”"
+    },
+    {
+      "id": "q08", "split": "dev", "type": "conditional",
+      "question": "Why are the roads of the Carpathians traditionally not kept in good repair?",
+      "expected_answer": "The old Hospadars would not repair them lest the Turk think they were preparing to bring in foreign troops and hasten the war",
+      "gold_source_id": "dracula", "gold_page": 6,
+      "evidence_quote": "Of old the Hospadars would not repair them, lest the Turk should think that they were preparing to bring in foreign troops, and so hasten the war which was always really at loading point"
+    },
+    {
+      "id": "q09", "split": "dev", "type": "paraphrase",
+      "question": "How does the Dodo settle the question of who won the Caucus-race?",
+      "expected_answer": "\"Everybody has won, and all must have prizes\"",
+      "gold_source_id": "alice", "gold_page": 12,
+      "evidence_quote": "At last the Dodo said, “Everybody has won, and all must have prizes.”"
+    },
+    {
+      "id": "q10", "split": "dev", "type": "paraphrase",
+      "question": "What made Alice shrink to about two feet high while she was talking, and how did she stop it?",
+      "expected_answer": "The Rabbit's fan she was holding; she dropped it hastily, just in time to avoid shrinking away altogether",
+      "gold_source_id": "alice", "gold_page": 8,
+      "evidence_quote": "she soon found out that the cause of this was the fan she was holding, and she dropped it hastily, just in time to avoid shrinking away altogether"
+    },
+    {
+      "id": "q11", "split": "dev", "type": "filter", "filter": {"book": "dracula"},
+      "question": "In Dracula, at which hotel does the Count tell Harker to stay when he reaches Bistritz?",
+      "expected_answer": "The Golden Krone Hotel",
+      "gold_source_id": "dracula", "gold_page": 3,
+      "evidence_quote": "Count Dracula had directed me to go to the Golden Krone Hotel, which I found, to my great delight, to be thoroughly old-fashioned"
+    },
+    {
+      "id": "q12", "split": "dev", "type": "filter", "filter": {"book": "sherlock"},
+      "question": "In The Adventures of Sherlock Holmes, under what name will the King stay while he waits in London?",
+      "expected_answer": "The Count Von Kramm, at the Langham",
+      "gold_source_id": "sherlock", "gold_page": 9,
+      "evidence_quote": "You will find me at the Langham under the name of the Count Von Kramm"
+    },
+    {
+      "id": "q13", "split": "dev", "type": "filter", "filter": {"book": "alice"},
+      "question": "In Alice's Adventures in Wonderland, how does the White Rabbit know that he is late?",
+      "expected_answer": "He takes a watch out of his waistcoat-pocket and looks at it",
+      "gold_source_id": "alice", "gold_page": 1,
+      "evidence_quote": "when the Rabbit actually took a watch out of its waistcoat-pocket, and looked at it, and then hurried on, Alice started to her feet"
+    },
+    {
+      "id": "q14", "split": "dev", "type": "paraphrase",
+      "question": "Who is the one woman Holmes ever referred to as \"the woman\"?",
+      "expected_answer": "Irene Adler",
+      "gold_source_id": "sherlock", "gold_page": 1,
+      "evidence_quote": "And yet there was but one woman to him, and that woman was the late Irene Adler, of dubious and questionable memory"
+    },
+    {
+      "id": "q15", "split": "dev", "type": "conditional",
+      "question": "Before drinking from the bottle, what did Alice check on the label, and what lessons made her careful?",
+      "expected_answer": "Whether it was marked \"poison\"; she remembered stories of children burnt, eaten by wild beasts or otherwise harmed because they ignored simple rules",
+      "gold_source_id": "alice", "gold_page": 4,
+      "evidence_quote": "“No, I’ll look first,” she said, “and see whether it’s marked ‘poison’ or not”; for she had read several nice little histories about children who had got burnt, and eaten up by wild beasts and other unpleasant things"
+    },
+    {
+      "id": "q16", "split": "test", "type": "direct",
+      "question": "What German line does a passenger whisper about the strange calèche driver, and what does it mean?",
+      "expected_answer": "\"Denn die Todten reiten schnell\" — \"For the dead travel fast\"",
+      "gold_source_id": "dracula", "gold_page": 9,
+      "evidence_quote": "One of my companions whispered to another the line from Burger’s “Lenore”:-- “Denn die Todten reiten schnell”-- (“For the dead travel fast.”)"
+    },
+    {
+      "id": "q17", "split": "test", "type": "paraphrase",
+      "question": "Which French sentence does Alice try on the Mouse in the pool, and why does it frighten him?",
+      "expected_answer": "\"Où est ma chatte?\" (Where is my cat?) — the first sentence in her French lesson-book; the Mouse leaps out of the water in fright because it hates cats",
+      "gold_source_id": "alice", "gold_page": 10,
+      "evidence_quote": "So she began again: “Où est ma chatte?” which was the first sentence in her French lesson-book. The Mouse gave a sudden leap out of the water, and seemed to quiver all over with fright"
+    },
+    {
+      "id": "q18", "split": "test", "type": "conditional",
+      "question": "According to Holmes, what is the capital mistake about theorising, and what does one begin to do?",
+      "expected_answer": "To theorise before one has data; one begins to twist facts to suit theories, instead of theories to suit facts",
+      "gold_source_id": "sherlock", "gold_page": 4,
+      "evidence_quote": "It is a capital mistake to theorise before one has data. Insensibly one begins to twist facts to suit theories, instead of theories to suit facts"
+    },
+    {
+      "id": "q19", "split": "test", "type": "filter", "filter": {"book": "dracula"},
+      "question": "In Dracula, what does the old lady of the Golden Krone give Harker before his coach leaves, and for whose sake?",
+      "expected_answer": "She puts her crucifix (on its rosary) round his neck, saying \"For your mother's sake\"",
+      "gold_source_id": "dracula", "gold_page": 4,
+      "evidence_quote": "She then rose and dried her eyes, and taking a crucifix from her neck offered it to me. I did not know what to do"
+    },
+    {
+      "id": "q20", "split": "test", "type": "direct",
+      "question": "Where does the wedding of Irene Adler take place, and what role does Watson end up playing?",
+      "expected_answer": "The Church of St. Monica; Watson is drafted as witness and finds himself assisting in marrying Irene Adler to Godfrey Norton",
+      "gold_source_id": "sherlock", "gold_page": 13,
+      "evidence_quote": "I found myself mumbling responses which were whispered in my ear, and vouching for things of which I knew nothing, and generally assisting in the secure tying up of Irene Adler, spinster, to Godfrey Norton, bachelor"
+    }
+  ]
+}

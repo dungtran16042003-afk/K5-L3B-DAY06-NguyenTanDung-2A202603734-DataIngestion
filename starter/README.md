@@ -1,65 +1,56 @@
-# Starter · PostgreSQL + pgvector
+# Starter · Chroma (lite, no Docker)
 
-Bộ khởi động **tùy chọn** cho lab cá nhân. Docker Compose tạo PostgreSQL + pgvector local; các file trong `src/` là **khung pseudocode có TODO**, chưa đọc tài liệu, tạo embedding, lưu vector hay chạy benchmark. Bạn cần tự hiện thực. Vẫn có thể chọn Qdrant, Chroma hoặc vector store tương đương theo [GUIDE.md](../GUIDE.md).
+Bộ khởi động **đã hiện thực** cho lab cá nhân, phương án "lite" theo hướng dẫn:
+**Chroma embedded** (lưu bền vững trên đĩa, vector search cosine, metadata filter)
+thay cho PostgreSQL + pgvector/Docker. Không cần Docker, không cần server, không
+cần key ngoài Gemini API.
 
 ## Cấu trúc
 
 ```text
 starter/
-├── docker-compose.yml     # PostgreSQL 16 + pgvector, chỉ mở cổng local
-├── init.sql               # bật extension khi tạo database mới
-├── requirements.txt       # psycopg, pypdf và python-dotenv
-├── .env.example           # cấu hình mẫu; copy thành .env
-├── scripts/check_setup.py # kiểm tra kết nối và extension (đã chạy được)
+├── .env.example           # cấu hình mẫu; copy thành .env rồi điền GEMINI_API_KEY
+├── requirements.txt       # chromadb, requests, python-dotenv
 ├── src/
-│   ├── models.py          # cấu trúc dữ liệu mẫu
-│   ├── ingestion.py       # TODO: đọc / chuẩn hóa tài liệu
-│   ├── chunking.py        # TODO: chia chunk
-│   ├── embeddings.py      # TODO: chọn model API hoặc local
-│   ├── store.py           # TODO: lưu vector, metadata và filter
-│   ├── evaluation.py      # TODO: chấm truy xuất, lưu trace
-│   └── run.py             # TODO: kết nối các bước thành pipeline
-├── data/                  # bạn tự chuẩn bị corpus được phép sử dụng
-└── results/               # lưu kết quả của bạn
+│   ├── models.py          # DocumentPage / Chunk (giữ traceability)
+│   ├── ingestion.py       # đọc/normalize sách Gutenberg -> units ≥1500 ký tự + manifest
+│   ├── chunking.py        # A: fixed 500/50 · B: paragraph ≤900
+│   ├── embeddings.py      # Gemini REST (batch 10 + retry khi 429)
+│   ├── store.py           # Chroma persistent, 1 collection/strategy, upsert idempotent
+│   ├── evaluation.py      # Hit@1 / Evidence Hit@3 + matcher whitespace-insensitive
+│   ├── audit.py           # sinh mẫu chấm tay (coherence/metadata/grounding)
+│   └── run.py             # 3 stage: ingest | verify | run
+├── data/                  # để trống (corpus nằm ở ../data/books)
+└── .chroma/               # dữ liệu vector (gitignored, tạo khi chạy)
 ```
 
-## 1. Cài và kiểm tra database
-
-Cần Docker Desktop hoặc Docker Engine + Compose, Python **3.11–3.14**, và mạng để tải image/dependencies lần đầu. Các lệnh sau chạy từ thư mục `starter/`:
+## Chạy
 
 ```bash
 cd starter
-python3 -m venv .venv
-```
-
-Kích hoạt `.venv`: macOS/Linux dùng `source .venv/bin/activate`; Windows PowerShell dùng `.venv\Scripts\Activate.ps1`. Sau đó:
-
-```bash
+python -m venv .venv
+# Windows PowerShell: .venv\Scripts\Activate.ps1  (macOS/Linux: source .venv/bin/activate)
 python -m pip install -r requirements.txt
-# macOS/Linux: cp .env.example .env
-# Windows PowerShell: Copy-Item .env.example .env
-docker compose -p day6_student_starter up -d --wait
-python scripts/check_setup.py
+# copy .env.example thành .env và điền GEMINI_API_KEY
+
+.venv/Scripts/python -m src.run ingest    # đọc corpus, ghi data/manifest.json + results/units_readable.md
+.venv/Scripts/python -m src.run verify    # kiểm chứng 20/20 evidence nằm đúng gold unit
+.venv/Scripts/python -m src.run run       # chunk -> embed -> store A/B/C -> trace -> metrics
+.venv/Scripts/python -m src.audit         # sinh results/audit_samples.json + filter_compliance.json
 ```
 
-Kỳ vọng: hiện tên database, phiên bản PostgreSQL và pgvector, sau đó `Setup OK`. Đây **chỉ là kiểm tra hạ tầng**, không phải kết quả benchmark. Docker dùng cổng `127.0.0.1:55433` và mật khẩu cố định **chỉ dùng local cho lab**; nếu cổng bận, sửa đồng thời port trong `docker-compose.yml` và `DATABASE_URL` trong `.env`. `init.sql` chỉ chạy khi volume mới được tạo; nếu database sẵn có chưa bật extension, xem log Docker và kiểm tra cấu hình thay vì xóa volume chứa dữ liệu.
+(Khi venv đã kích hoạt thì chỉ cần `python -m src.run ...`.)
 
-Dừng container nhưng giữ dữ liệu:
+## Embedding model & store
 
-```bash
-docker compose -p day6_student_starter stop
-```
+- **Model:** `gemini-embedding-001` qua REST API, `outputDimensionality=768`,
+  `taskType` = `RETRIEVAL_DOCUMENT` cho chunk / `RETRIEVAL_QUERY` cho câu hỏi.
+  Batch 10 text/request + backoff khi 429 (quota phút của free tier).
+- **Store:** chromadb `PersistentClient` tại `starter/.chroma/`, 3 collection
+  `day6_A/B/C`, space `cosine`. Stable chunk IDs (`<strategy>:<doc>:p<page>:c<seq>`)
+  → upsert lại không nhân đôi (đã kiểm chứng: results/reload_check.txt).
 
-## 2. Chọn embedding model
+## Chi phí & thời gian
 
-Điền key tương ứng trong `.env` nếu dùng OpenRouter, OpenAI hoặc Gemini; **không commit `.env`**. Model local không cần API key. `requirements.txt` chỉ có dependencies cơ bản: tự cài SDK hoặc thư viện local phù hợp với model bạn chọn và ghi lại version/lệnh cài trong báo cáo. Ghi tên model và số chiều; dùng cùng model cho toàn bộ chiến lược và vector query tương thích vector document.
-
-## 3. Hoàn thiện pipeline
-
-1. Đặt corpus vào `data/` hoặc cung cấp manifest/hướng dẫn truy cập. Đọc [GUIDE.md](../GUIDE.md) về **30 trang nội dung**, quyền dữ liệu và metadata.
-2. Hoàn thiện từng hàm TODO trong `src/`. Lưu ID tài liệu, nguồn, trang/vị trí và ít nhất một trường filter có ích.
-3. Xây ít nhất ba cấu hình; ví dụ A fixed-size, B theo đoạn, C như B nhưng có filter. Cần cùng corpus, model và benchmark; nạp lại không nhân đôi và xử lý chunk cũ khi dữ liệu đổi.
-4. Tự viết ít nhất 20 câu hỏi kèm evidence, tách dev/test trước khi thử theo [BENCHMARK.md](../BENCHMARK.md). Lưu trace top-3 và báo cáo đủ năm tiêu chí.
-5. Sau khi hoàn thiện, chạy `python -m src.run` từ thư mục `starter/`. Trước khi làm TODO, lệnh này **chủ động báo `NotImplementedError`**.
-
-Lưu code, cấu hình, kết quả và lệnh chạy để người chấm tái lập; không commit key, dữ liệu mật hoặc dữ liệu không có quyền chia sẻ.
+Free tier Gemini embedding → chi phí 0 USD. Toàn bộ pipeline ~5 phút trên máy
+local (312s: 435 vectors, 75 API calls, gồm thời gian chờ retry).

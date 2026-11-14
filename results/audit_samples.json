@@ -1,0 +1,1026 @@
+{
+  "how_to_label": {
+    "coherence": "0 = cut mid-idea/missing subject, 1 = partly understandable, 2 = self-contained",
+    "metadata": "fields_ok = document_id, source, page (+book filter field) present AND correct vs gold",
+    "grounding": "0 = no evidence in top-3, 1 = evidence present but missing a needed condition, 2 = sufficient to answer & traceable",
+    "filter_compliance": "computed from traces.json: strategy C top-3 all have book=<filter> ?"
+  },
+  "coherence_positions": [
+    {
+      "position_id": "alice:p1:mid",
+      "unit_text_mid": "watch to take out of it, and burning with curiosity, she ran",
+      "A_chunks_covering": [
+        "A:alice:p1:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p1:c1"
+      ],
+      "B_label": null,
+      "B_reason": null
+    },
+    {
+      "position_id": "alice:p2:mid",
+      "unit_text_mid": "country is, you know. Please, Ma’am, is this New Zealand or ",
+      "A_chunks_covering": [
+        "A:alice:p2:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p2:c2"
+      ],
+      "B_label": null,
+      "B_reason": null
+    },
+    {
+      "position_id": "alice:p3:mid",
+      "unit_text_mid": "but, alas! either the locks were too large, or the key was t",
+      "A_chunks_covering": [
+        "A:alice:p3:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p3:c1"
+      ],
+      "B_label": null,
+      "B_reason": null
+    },
+    {
+      "position_id": "alice:p4:mid",
+      "unit_text_mid": "bottle marked “poison,” it is almost certain to disagree wit",
+      "A_chunks_covering": [
+        "A:alice:p4:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p4:c1"
+      ],
+      "B_label": null,
+      "B_reason": null
+    },
+    {
+      "position_id": "alice:p5:mid",
+      "unit_text_mid": "for this curious child was very fond of pretending to be two",
+      "A_chunks_covering": [
+        "A:alice:p5:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p5:c1"
+      ],
+      "B_label": null,
+      "B_reason": null
+    },
+    {
+      "position_id": "alice:p6:mid",
+      "unit_text_mid": "go by the carrier,” she thought; “and how funny it’ll seem, ",
+      "A_chunks_covering": [
+        "A:alice:p6:c1",
+        "A:alice:p6:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p6:c1"
+      ],
+      "B_label": null,
+      "B_reason": null
+    },
+    {
+      "position_id": "alice:p7:mid",
+      "unit_text_mid": "in the world am I? Ah, that’s the great puzzle!” And she beg",
+      "A_chunks_covering": [
+        "A:alice:p7:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p7:c1"
+      ],
+      "B_label": null,
+      "B_reason": null
+    },
+    {
+      "position_id": "alice:p8:mid",
+      "unit_text_mid": "As she said this she looked down at her hands, and was surpr",
+      "A_chunks_covering": [
+        "A:alice:p8:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p8:c2"
+      ],
+      "B_label": null,
+      "B_reason": null
+    },
+    {
+      "position_id": "alice:p9:mid",
+      "unit_text_mid": "Just then she heard something splashing about in the pool a ",
+      "A_chunks_covering": [
+        "A:alice:p9:c1",
+        "A:alice:p9:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p9:c1"
+      ],
+      "B_label": null,
+      "B_reason": null
+    },
+    {
+      "position_id": "alice:p10:mid",
+      "unit_text_mid": "pardon!” cried Alice again, for this time the Mouse was bris",
+      "A_chunks_covering": [
+        "A:alice:p10:c2"
+      ],
+      "A_label": null,
+      "A_reason": null,
+      "B_chunks_covering": [
+        "B:alice:p10:c1"
+      ],
+      "B_label": null,
+      "B_reason": null
+    }
+  ],
+  "metadata_rows": [
+    {
+      "question_id": "q16",
+      "strategy": "A",
+      "rank": 1,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 9,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 9,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "A",
+      "rank": 2,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 9,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 9,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "A",
+      "rank": 3,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 9,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 9,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "B",
+      "rank": 1,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 9,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 9,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "B",
+      "rank": 2,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 9,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 9,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "B",
+      "rank": 3,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 8,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 9,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "C",
+      "rank": 1,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 9,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 9,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "C",
+      "rank": 2,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 9,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 9,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "C",
+      "rank": 3,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 8,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 9,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "A",
+      "rank": 1,
+      "document_id": "alice",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "page": 10,
+      "book": "alice",
+      "expected_doc": "alice",
+      "expected_page": 10,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "A",
+      "rank": 2,
+      "document_id": "alice",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "page": 9,
+      "book": "alice",
+      "expected_doc": "alice",
+      "expected_page": 10,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "A",
+      "rank": 3,
+      "document_id": "alice",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "page": 9,
+      "book": "alice",
+      "expected_doc": "alice",
+      "expected_page": 10,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "B",
+      "rank": 1,
+      "document_id": "alice",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "page": 10,
+      "book": "alice",
+      "expected_doc": "alice",
+      "expected_page": 10,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "B",
+      "rank": 2,
+      "document_id": "alice",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "page": 9,
+      "book": "alice",
+      "expected_doc": "alice",
+      "expected_page": 10,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "B",
+      "rank": 3,
+      "document_id": "alice",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "page": 10,
+      "book": "alice",
+      "expected_doc": "alice",
+      "expected_page": 10,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "C",
+      "rank": 1,
+      "document_id": "alice",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "page": 10,
+      "book": "alice",
+      "expected_doc": "alice",
+      "expected_page": 10,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "C",
+      "rank": 2,
+      "document_id": "alice",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "page": 9,
+      "book": "alice",
+      "expected_doc": "alice",
+      "expected_page": 10,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "C",
+      "rank": 3,
+      "document_id": "alice",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "page": 10,
+      "book": "alice",
+      "expected_doc": "alice",
+      "expected_page": 10,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "A",
+      "rank": 1,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 4,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "A",
+      "rank": 2,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 3,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "A",
+      "rank": 3,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 1,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "B",
+      "rank": 1,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 3,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "B",
+      "rank": 2,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 4,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "B",
+      "rank": 3,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 2,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "C",
+      "rank": 1,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 3,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "C",
+      "rank": 2,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 4,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "C",
+      "rank": 3,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 2,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "A",
+      "rank": 1,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 4,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "A",
+      "rank": 2,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 4,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "A",
+      "rank": 3,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 8,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "B",
+      "rank": 1,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 4,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "B",
+      "rank": 2,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 3,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "B",
+      "rank": 3,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 8,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "C",
+      "rank": 1,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 4,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "C",
+      "rank": 2,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 3,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "C",
+      "rank": 3,
+      "document_id": "dracula",
+      "source": "https://www.gutenberg.org/ebooks/345",
+      "page": 8,
+      "book": "dracula",
+      "expected_doc": "dracula",
+      "expected_page": 4,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "A",
+      "rank": 1,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 13,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 13,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "A",
+      "rank": 2,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 1,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 13,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "A",
+      "rank": 3,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 13,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 13,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "B",
+      "rank": 1,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 13,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 13,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "B",
+      "rank": 2,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 13,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 13,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "B",
+      "rank": 3,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 11,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 13,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "C",
+      "rank": 1,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 13,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 13,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "C",
+      "rank": 2,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 13,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 13,
+      "fields_ok": null,
+      "values_correct": true,
+      "note": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "C",
+      "rank": 3,
+      "document_id": "sherlock",
+      "source": "https://www.gutenberg.org/ebooks/1661",
+      "page": 11,
+      "book": "sherlock",
+      "expected_doc": "sherlock",
+      "expected_page": 13,
+      "fields_ok": null,
+      "values_correct": false,
+      "note": null
+    }
+  ],
+  "grounding_rows": [
+    {
+      "question_id": "q16",
+      "strategy": "A",
+      "top3_unit_ids": [
+        "dracula:p9",
+        "dracula:p9",
+        "dracula:p9"
+      ],
+      "top3_similarity": [
+        0.7653,
+        0.7295,
+        0.7092
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "B",
+      "top3_unit_ids": [
+        "dracula:p9",
+        "dracula:p9",
+        "dracula:p8"
+      ],
+      "top3_similarity": [
+        0.7444,
+        0.7345,
+        0.71
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q16",
+      "strategy": "C",
+      "top3_unit_ids": [
+        "dracula:p9",
+        "dracula:p9",
+        "dracula:p8"
+      ],
+      "top3_similarity": [
+        0.7444,
+        0.7345,
+        0.71
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "A",
+      "top3_unit_ids": [
+        "alice:p10",
+        "alice:p9",
+        "alice:p9"
+      ],
+      "top3_similarity": [
+        0.8023,
+        0.7839,
+        0.7545
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "B",
+      "top3_unit_ids": [
+        "alice:p10",
+        "alice:p9",
+        "alice:p10"
+      ],
+      "top3_similarity": [
+        0.7842,
+        0.7842,
+        0.7358
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q17",
+      "strategy": "C",
+      "top3_unit_ids": [
+        "alice:p10",
+        "alice:p9",
+        "alice:p10"
+      ],
+      "top3_similarity": [
+        0.7842,
+        0.7842,
+        0.7358
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "A",
+      "top3_unit_ids": [
+        "sherlock:p4",
+        "sherlock:p3",
+        "sherlock:p1"
+      ],
+      "top3_similarity": [
+        0.703,
+        0.6914,
+        0.6713
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "B",
+      "top3_unit_ids": [
+        "sherlock:p3",
+        "sherlock:p4",
+        "sherlock:p2"
+      ],
+      "top3_similarity": [
+        0.6864,
+        0.685,
+        0.6787
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q18",
+      "strategy": "C",
+      "top3_unit_ids": [
+        "sherlock:p3",
+        "sherlock:p4",
+        "sherlock:p2"
+      ],
+      "top3_similarity": [
+        0.6864,
+        0.685,
+        0.6787
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "A",
+      "top3_unit_ids": [
+        "dracula:p4",
+        "dracula:p4",
+        "dracula:p8"
+      ],
+      "top3_similarity": [
+        0.7396,
+        0.6998,
+        0.6759
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "B",
+      "top3_unit_ids": [
+        "dracula:p4",
+        "dracula:p3",
+        "dracula:p8"
+      ],
+      "top3_similarity": [
+        0.74,
+        0.7038,
+        0.6854
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q19",
+      "strategy": "C",
+      "top3_unit_ids": [
+        "dracula:p4",
+        "dracula:p3",
+        "dracula:p8"
+      ],
+      "top3_similarity": [
+        0.74,
+        0.7038,
+        0.6854
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "A",
+      "top3_unit_ids": [
+        "sherlock:p13",
+        "sherlock:p1",
+        "sherlock:p13"
+      ],
+      "top3_similarity": [
+        0.752,
+        0.6731,
+        0.67
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "B",
+      "top3_unit_ids": [
+        "sherlock:p13",
+        "sherlock:p13",
+        "sherlock:p11"
+      ],
+      "top3_similarity": [
+        0.7557,
+        0.6778,
+        0.6752
+      ],
+      "label": null,
+      "reason": null
+    },
+    {
+      "question_id": "q20",
+      "strategy": "C",
+      "top3_unit_ids": [
+        "sherlock:p13",
+        "sherlock:p13",
+        "sherlock:p11"
+      ],
+      "top3_similarity": [
+        0.7557,
+        0.6778,
+        0.6752
+      ],
+      "label": null,
+      "reason": null
+    }
+  ]
+}

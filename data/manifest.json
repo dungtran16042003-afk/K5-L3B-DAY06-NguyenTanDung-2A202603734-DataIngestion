@@ -1,0 +1,186 @@
+{
+  "generated_at": "2026-11-14",
+  "selection_rule": "First ~27000 normalized chars of each book body after removing Project Gutenberg boilerplate and table of contents; units cut at paragraph boundaries, each >=1500 normalized chars (pseudo-pages).",
+  "unit_rule": "Accumulate paragraphs until ~1800 chars; short trailing remainder merged into the previous unit. page = 1-based unit index within each book.",
+  "sources": [
+    {
+      "source_id": "alice",
+      "title": "Alice's Adventures in Wonderland",
+      "source_path_or_url": "https://www.gutenberg.org/ebooks/11",
+      "local_path": "data/books/alice.txt",
+      "license_or_permission": "Public domain in the US; Project Gutenberg License",
+      "accessed_at": "2026-11-14",
+      "gutenberg_ebook": "11",
+      "unit_count": 12,
+      "total_chars": 26975,
+      "units": [
+        {
+          "page": 1,
+          "chars": 2399
+        },
+        {
+          "page": 2,
+          "chars": 2625
+        },
+        {
+          "page": 3,
+          "chars": 2089
+        },
+        {
+          "page": 4,
+          "chars": 2105
+        },
+        {
+          "page": 5,
+          "chars": 2005
+        },
+        {
+          "page": 6,
+          "chars": 1866
+        },
+        {
+          "page": 7,
+          "chars": 2253
+        },
+        {
+          "page": 8,
+          "chars": 2008
+        },
+        {
+          "page": 9,
+          "chars": 1861
+        },
+        {
+          "page": 10,
+          "chars": 2324
+        },
+        {
+          "page": 11,
+          "chars": 2174
+        },
+        {
+          "page": 12,
+          "chars": 3266
+        }
+      ]
+    },
+    {
+      "source_id": "sherlock",
+      "title": "The Adventures of Sherlock Holmes",
+      "source_path_or_url": "https://www.gutenberg.org/ebooks/1661",
+      "local_path": "data/books/sherlock.txt",
+      "license_or_permission": "Public domain in the US; Project Gutenberg License",
+      "accessed_at": "2026-11-14",
+      "gutenberg_ebook": "1661",
+      "unit_count": 13,
+      "total_chars": 26976,
+      "units": [
+        {
+          "page": 1,
+          "chars": 2451
+        },
+        {
+          "page": 2,
+          "chars": 2204
+        },
+        {
+          "page": 3,
+          "chars": 2125
+        },
+        {
+          "page": 4,
+          "chars": 2128
+        },
+        {
+          "page": 5,
+          "chars": 2566
+        },
+        {
+          "page": 6,
+          "chars": 1835
+        },
+        {
+          "page": 7,
+          "chars": 1961
+        },
+        {
+          "page": 8,
+          "chars": 1913
+        },
+        {
+          "page": 9,
+          "chars": 1906
+        },
+        {
+          "page": 10,
+          "chars": 1841
+        },
+        {
+          "page": 11,
+          "chars": 2277
+        },
+        {
+          "page": 12,
+          "chars": 2128
+        },
+        {
+          "page": 13,
+          "chars": 1641
+        }
+      ]
+    },
+    {
+      "source_id": "dracula",
+      "title": "Dracula",
+      "source_path_or_url": "https://www.gutenberg.org/ebooks/345",
+      "local_path": "data/books/dracula.txt",
+      "license_or_permission": "Public domain in the US; Project Gutenberg License",
+      "accessed_at": "2026-11-14",
+      "gutenberg_ebook": "345",
+      "unit_count": 10,
+      "total_chars": 26979,
+      "units": [
+        {
+          "page": 1,
+          "chars": 2624
+        },
+        {
+          "page": 2,
+          "chars": 3277
+        },
+        {
+          "page": 3,
+          "chars": 2539
+        },
+        {
+          "page": 4,
+          "chars": 2265
+        },
+        {
+          "page": 5,
+          "chars": 2774
+        },
+        {
+          "page": 6,
+          "chars": 2422
+        },
+        {
+          "page": 7,
+          "chars": 2669
+        },
+        {
+          "page": 8,
+          "chars": 2613
+        },
+        {
+          "page": 9,
+          "chars": 2471
+        },
+        {
+          "page": 10,
+          "chars": 3325
+        }
+      ]
+    }
+  ]
+}
